@@ -1,0 +1,100 @@
+.profile_dropdown {
+  position: relative;
+  width: fit-content;
+}
+
+.profile_dropdown_btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid #227c70;
+  border-radius: 50px;
+  cursor: pointer;
+  width: 150px;
+  transition: box-shadow 0.2s, background-color 0.2s;
+}
+
+.profile_dropdown_btn:hover {
+  background-color: rgb(34, 124, 112, 0.2);
+  box-shadow: 0px 2px 8px 0px rgb(34, 124, 112, 0.2);
+}
+
+.profile_img {
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: url(../../../images/avatar.png);
+  background-size: cover;
+}
+
+.profile_img i {
+  position: absolute;
+  right: 0;
+  bottom: 0.3rem;
+  font-size: 0.5rem;
+  color: #82cd47;
+}
+
+.profile_dropdown_btn span {
+  margin: 0 0.5rem;
+  margin-right: 0;
+  text-transform: capitalize;
+  color: #227c70;
+  font-weight: 900;
+}
+
+.profile_dropdown_list {
+  position: absolute;
+  top: 68px;
+  width: 220px;
+  right: 0;
+  background-color: transparent;
+  border-radius: 10px;
+  box-shadow: 0px 2px 8px 0px rgb(34, 124, 112, 0.2);
+  max-height: 0;
+  overflow: hidden;
+  z-index: 99;
+}
+
+.profile_dropdown_list.active {
+  max-height: 500px;
+}
+
+.profile_dropdown_list hr {
+  border: 0.5px solid #82cd47;
+}
+
+.profile_dropdown_list_item {
+  padding: 0.5rem 0 0.5rem 1rem;
+  transition: background-color 0.2s, padding-left 0.2s;
+}
+
+.profile_dropdown_list_item:hover {
+  padding-left: 1.5rem;
+  background-color: rgb(34, 124, 112, 0.2);
+}
+
+.profile_dropdown_list_item a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 0.9 rem;
+  font-weight: 500;
+  color: #393e46;
+}
+
+.profile_dropdown_list_item i {
+  margin-right: 1rem;
+  font-size: 1.1rem;
+  width: 2.3rem;
+  height: 2.3rem;
+  background-color: #227c70;
+  color: #fff;
+  line-height: 2.3rem;
+  text-align: center;
+  border-radius: 50%;
+}

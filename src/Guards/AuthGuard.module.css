@@ -1,0 +1,42 @@
+.auth_guard_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.auth_guard_title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #dfd5d5;
+}
+
+.auth_guard_description {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #666666;
+  text-align: center;
+}
+
+.auth_guard_buttons {
+  display: flex;
+}
+
+.auth_guard_button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #116d6e;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.auth_guard_button:hover {
+  background-color: #065c03;
+}

@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
-import { useAuthContext } from "../../context/auth/AuthContext";
 import styles from "./movies.module.css";
 import BackButton from "../../components/Presentational/BackButton/BackButton";
 import ErrorHandler from "../../components/Handlers/ErrorHandler/ErrorHandler";
 import LoaderHandler from "../../components/Handlers/LoaderHandler/LoaderHandler";
 import MoviesPageWrapper from "../../components/Container/MoviesPageWrapper/MoviesPageWrapper";
+import { useAppContext } from "../../context/AppContext";
 
 const Movies = () => {
-  const { state } = useAuthContext();
+  const { state } = useAppContext();
   const { movies, error, isLoading } = state;
 
   useEffect(() => {

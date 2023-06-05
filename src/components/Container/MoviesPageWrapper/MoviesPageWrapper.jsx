@@ -8,8 +8,8 @@ import "react-toastify/dist/ReactToastify.css";
 
 import MovieTable from "../../Presentational/MovieTable/MovieTable";
 import ScrollToTopButton from "../../Presentational/ScrollToTopButton/ScrollToTopButton";
-import { useAuthContext } from "../../../context/auth/AuthContext";
-import { favoriteMovie } from "../../../context/auth/actions/AuthContextActionsCreators";
+import { useAppContext } from "../../../context/AppContext";
+import { favoriteMovie } from "../../../context/actions/AppContextActionsCreators";
 
 const MoviesPageWrapper = ({ movies }) => {
   const [pageSize, setPageSize] = useState(20);
@@ -47,7 +47,7 @@ const MoviesPageWrapper = ({ movies }) => {
     };
   }, [currentPage]);
 
-  const { state, dispatch } = useAuthContext();
+  const { state, dispatch } = useAppContext();
 
   const handleFavorites = (movie) => {
     const isMovieInFavorites = state.favMovies.filter(

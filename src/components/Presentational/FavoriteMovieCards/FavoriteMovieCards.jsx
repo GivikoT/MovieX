@@ -1,54 +1,24 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { useEffect, useState } from "react";
-import { useAuthContext } from "../../../context/auth/AuthContext";
-import ScrollToTopButton from "../ScrollToTopButton/ScrollToTopButton";
-import { useNavigate } from "react-router-dom";
-import { MOVIES } from "../../../constants/routes";
-import styles from "./favoriteMovieCards.module.css";
-import { removeFavMovie } from "../../../context/auth/actions/AuthContextActionsCreators";
+import React from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-const FavoriteMovieCards = () => {
-  const { state, dispatch } = useAuthContext();
-  const { favMovies } = state;
-  const [pageSize, setPageSize] = useState(20);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [showButton, setShowButton] = useState(false);
-
-  const navigate = useNavigate();
-
-  const loadMovies = () => {
-    const increment = 20;
-    setPageSize((prev) => prev + increment);
-    setCurrentPage((prev) => prev + 1);
-  };
-
+import ScrollToTopButton from "../ScrollToTopButton/ScrollToTopButton";
+import { MOVIES } from "../../../constants/routes";
+import styles from "./favoriteMovieCards.module.css";
+const FavoriteMovieCards = ({
+  favMovies,
+  pageSize,
+  removeHandler,
+  navigate,
+  showButton,
+}) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const { scrollTop, clientHeight, scrollHeight } =
-        document.documentElement;
-      if (scrollTop + clientHeight >= scrollHeight - 10) {
-        loadMovies();
-      }
-
-      if (scrollTop > 200) {
-        setShowButton(true);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [currentPage]);
-
-  const removeHandler = (movie) => {
-    dispatch(removeFavMovie(movie));
+  const handleRemove = (movie) => {
+    removeHandler(movie);
     toast.success("📽️ Removed from your favorites!");
   };
 
@@ -101,7 +71,7 @@ const FavoriteMovieCards = () => {
               <td>
                 <button
                   className={styles.remove}
-                  onClick={() => removeHandler(movie)}
+                  onClick={() => handleRemove(movie)}
                 >
                   Remove From Favorites
                 </button>

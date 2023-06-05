@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useAuthContext } from "../../../context/auth/AuthContext";
+import { useAppContext } from "../../../context/AppContext";
 import { useNavigate } from "react-router-dom";
 import { MOVIES } from "../../../constants/routes";
 import styles from "./searchBar.module.css";
@@ -7,7 +7,7 @@ import SearchBarInput from "../../Presentational/Search/SearchBarInput/SearchBar
 import SearchBarDropdown from "../../Presentational/Search/SearchBarDropdown/SearchBarDropdown";
 
 const SearchBarWrapper = () => {
-  const { state } = useAuthContext();
+  const { state } = useAppContext();
   const { movies } = state;
 
   const [value, setValue] = useState("");

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import SignInForm from "../../components/Presentational/SignInForm/SignInForm";
 import { useLocation } from "react-router-dom";
 import styles from "./signIn.module.css";
+import SignInWrapper from "../../components/Container/SignInWrapper/SignInWrapper";
 
 const SignIn = () => {
   const location = useLocation();
@@ -22,7 +22,7 @@ const SignIn = () => {
           You have successfully Signed Up!
         </h1>
       )}
-      <SignInForm />
+      <SignInWrapper />
     </div>
   );
 };

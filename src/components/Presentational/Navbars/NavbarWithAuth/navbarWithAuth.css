@@ -2,39 +2,43 @@
   display: flex;
   align-items: center;
   height: 70px;
-  padding: 0 8%;
-  width: 80%;
-  height: 70px;
-  background: transparent;
   padding: 0 40px;
+  background: transparent;
   border-radius: 0 0 10px 10px;
   margin: 0 auto;
   justify-content: space-between;
+  width: 80%;
 }
 
 .navbar_logo {
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .navbar_list {
-  width: 100%;
-  text-align: right;
-  padding-right: 2rem;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-right: 1rem;
 }
 
 .navbar_list li {
-  display: inline-block;
-  margin: 0 1rem;
+  margin: 0 0.5rem;
+}
+
+.navbar_list li:last-child {
+  margin-right: 0;
 }
 
 .navbar_list li a {
   color: #474646;
-  display: block;
-  margin: 0 2px;
   font-weight: 600;
   padding: 8px 18px;
-  transition: 0.2s;
   border-radius: 30px;
+  transition: 0.2s;
 }
 
 .navbar_list li a:hover {
@@ -48,6 +52,7 @@
 
 img {
   width: 100px;
+  cursor: pointer;
 }
 
 .logo {

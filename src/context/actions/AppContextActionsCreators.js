@@ -7,7 +7,7 @@ import {
   LOADINGSTATUS,
   FAV_MOVIES,
   REMOVE_FAV_MOVIE,
-} from "./AuthContextActions";
+} from "./AppContextActions";
 
 function logIn(data) {
   return {

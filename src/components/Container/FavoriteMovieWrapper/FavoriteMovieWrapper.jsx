@@ -1,17 +1,17 @@
 import React from "react";
-import { useAuthContext } from "../../../context/auth/AuthContext";
-import FavoriteMovieCards from "../../Presentational/FavoriteMovieCards/FavoriteMovieCards";
 import { Link } from "react-router-dom";
 import { MOVIES } from "../../../constants/routes";
 import styles from "./favoriteMovieWrapper.module.css";
+import FavoriteMovieCardsContainer from "./FavoriteMovieContainer/FavoriteMovieContainer";
+import { useAppContext } from "../../../context/AppContext";
 
 const FavoriteMovieWrapper = () => {
-  const { state } = useAuthContext();
+  const { state } = useAppContext();
   const { favMovies } = state;
   return (
     <div className={styles.favorite_movie_wrapper}>
       {favMovies.length > 0 ? (
-        <FavoriteMovieCards />
+        <FavoriteMovieCardsContainer />
       ) : (
         <div className={styles.empty_message}>
           <h1>No Favorite Movies</h1>

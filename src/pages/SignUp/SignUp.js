@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import SignUpForm from "../../components/Presentational/SignUpForm/SignUpForm";
+import SignUpWrapper from "../../components/Container/SignUpWrapper/SignUpWrapper";
 
 const SignUp = () => {
   useEffect(() => {
@@ -12,7 +12,7 @@ const SignUp = () => {
 
   return (
     <div>
-      <SignUpForm />
+      <SignUpWrapper />
     </div>
   );
 };

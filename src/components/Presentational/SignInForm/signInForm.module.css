@@ -90,24 +90,30 @@ input:valid ~ label {
   text-decoration: underline;
 }
 
+.formWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .errorHandler {
   color: rgb(231, 0, 0);
   font-weight: 500;
   position: absolute;
-  left: 10%;
-  bottom: 0;
-  font-size: 17px;
+  left: 40%;
+  top: 30%;
+  font-size: 27px;
 }
 
-.loader {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
+.wrapper {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .custom_loader {
-  --R: 30px;
+  --R: 60px;
   --g1: #070503 96%, #0000;
   --g2: #15ed7d 96%, #0000;
   width: calc(2 * var(--R));
@@ -115,7 +121,8 @@ input:valid ~ label {
   border-radius: 50%;
   display: grid;
   -webkit-mask: linear-gradient(#000 0 0);
-  animation: s10 2s infinite linear;
+  animation: s10 1s infinite linear;
+  z-index: 10;
 }
 
 .custom_loader::before,

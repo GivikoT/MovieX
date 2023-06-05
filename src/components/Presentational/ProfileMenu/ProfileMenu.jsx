@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useState } from "react";
 import styles from "./profileMenu.module.css";
-import { useAuthContext } from "../../../context/auth/AuthContext";
-import { logOut } from "../../../context/auth/actions/AuthContextActionsCreators";
+import { useAppContext } from "../../../context/AppContext";
+import { logOut } from "../../../context/actions/AppContextActionsCreators";
 import { useNavigate } from "react-router-dom";
 import { SIGN_IN } from "../../../constants/routes";
 
@@ -13,7 +13,7 @@ const ProfileMenu = () => {
     setMenuActive(!menuActive);
   };
 
-  const { state, dispatch } = useAuthContext();
+  const { state, dispatch } = useAppContext();
 
   const navigate = useNavigate();
 

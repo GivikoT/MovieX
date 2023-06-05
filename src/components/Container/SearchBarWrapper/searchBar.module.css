@@ -8,13 +8,13 @@
   cursor: pointer;
   padding-left: 15px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.075);
-  margin-left: 150px;
+  margin-left: 90px;
   position: relative;
   width: 480px;
 }
 
 .input {
-  width: 1000px;
+  width: 500px;
   height: 100%;
   border: none;
   outline: none;

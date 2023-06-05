@@ -75,18 +75,24 @@
 
 .errorHandles {
   color: red;
-  margin-top: 10px;
   text-align: center;
   font-size: 14px;
   position: absolute;
-  top: 20%;
+  top: 13%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 20px;
 }
 
+.wrapper {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .custom_loader {
-  --R: 30px;
+  --R: 60px;
   --g1: #070503 96%, #0000;
   --g2: #15ed7d 96%, #0000;
   width: calc(2 * var(--R));
@@ -94,7 +100,8 @@
   border-radius: 50%;
   display: grid;
   -webkit-mask: linear-gradient(#000 0 0);
-  animation: s10 2s infinite linear;
+  animation: s10 1s infinite linear;
+  z-index: 10;
 }
 
 .custom_loader::before,
@@ -135,4 +142,26 @@
   100% {
     transform: rotate(-1turn);
   }
+}
+
+.password_input {
+  position: relative;
+}
+
+.password_toggle {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.password_toggle:before {
+  font-family: "FontAwesome";
+  content: "\f070";
+  font-weight: normal;
+}
+
+.password_toggle.active:before {
+  content: "\f06e";
 }

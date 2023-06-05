@@ -1,13 +1,13 @@
 /* eslint-disable react/prop-types */
 import React from "react";
-import { useAuthContext } from "../context/auth/AuthContext";
 import { HOME } from "../constants/routes";
 import { Navigate } from "react-router-dom";
+import { useAppContext } from "../context/AppContext";
 
 const GuestGuard = ({ children }) => {
   const {
     state: { isAuthenticated },
-  } = useAuthContext();
+  } = useAppContext();
 
   return <>{isAuthenticated ? <Navigate to={HOME} /> : children}</>;
 };

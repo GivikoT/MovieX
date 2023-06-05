@@ -12,13 +12,13 @@ import { useNavigate } from "react-router-dom";
 import { MOVIES } from "../../../constants/routes";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useAuthContext } from "../../../context/auth/AuthContext";
-import { favoriteMovie } from "../../../context/auth/actions/AuthContextActionsCreators";
+import { favoriteMovie } from "../../../context/actions/AppContextActionsCreators";
+import { useAppContext } from "../../../context/AppContext";
 
 const MovieSection = ({ movies }) => {
   const navigate = useNavigate();
 
-  const { state, dispatch } = useAuthContext();
+  const { state, dispatch } = useAppContext();
 
   const handleFavorites = (movie) => {
     const isMovieInFavorites = state.favMovies.filter(

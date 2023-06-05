@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
-import { useAuthContext } from "../../context/auth/AuthContext";
+import { useAppContext } from "../../context/AppContext";
 import HeroSlider from "../../components/Presentational/HeroSlider/HeroSlider";
 import MovieSection from "../../components/Presentational/MovieSection/MovieSection";
 import ErrorHandler from "../../components/Handlers/ErrorHandler/ErrorHandler";
 import LoaderHandler from "../../components/Handlers/LoaderHandler/LoaderHandler";
 
 const Home = () => {
-  const { state } = useAuthContext();
+  const { state } = useAppContext();
 
   const { movies, error, isLoading } = state;
 

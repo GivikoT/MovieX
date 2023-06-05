@@ -1,4 +1,4 @@
-import { decodeToken, toggleLocalStorage } from "../../utils/jwt";
+import { decodeToken, toggleLocalStorage } from "../utils/jwt";
 import {
   AUTHENTICATED,
   ERRORS,
@@ -8,7 +8,7 @@ import {
   MOVIES,
   FAV_MOVIES,
   REMOVE_FAV_MOVIE,
-} from "./actions/AuthContextActions";
+} from "./actions/AppContextActions";
 
 function reducer(state, action) {
   const { type, payload } = action;

@@ -1,10 +1,10 @@
 import React from "react";
-import { useAuthContext } from "../../../context/auth/AuthContext";
+import { useAppContext } from "../../../context/AppContext";
 import NavbarWithProfile from "../../Presentational/Navbars/NavbarWithProfile/NavbarWithProfile";
 import NavbarWithAuth from "../../Presentational/Navbars/NavbarWithAuth/NavbarWithAuth";
 
 const NavbarWrapper = () => {
-  const { state } = useAuthContext();
+  const { state } = useAppContext();
   const { isAuthenticated } = state;
 
   return (

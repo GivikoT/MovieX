@@ -1,13 +1,21 @@
+.wrapper {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .custom_loader {
   --R: 60px;
-  --g1: #2cf408 96%, #0000;
-  --g2: #000000 96%, #0000;
+  --g1: #070503 96%, #0000;
+  --g2: #15ed7d 96%, #0000;
   width: calc(2 * var(--R));
   height: calc(2 * var(--R));
   border-radius: 50%;
   display: grid;
   -webkit-mask: linear-gradient(#000 0 0);
   animation: s10 1s infinite linear;
+  z-index: 10;
 }
 
 .custom_loader::before,

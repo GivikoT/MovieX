@@ -3,11 +3,25 @@
   width: fit-content;
 }
 
-.profile_dropdown_btn {
+/* .profile_dropdown_btn {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-right: 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid #227c70;
+  border-radius: 50px;
+  cursor: pointer;
+  width: 150px;
+  transition: box-shadow 0.2s, background-color 0.2s;
+} */
+
+.profile_dropdown_btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
   font-size: 0.9rem;
   font-weight: 500;
   border: 1px solid #227c70;

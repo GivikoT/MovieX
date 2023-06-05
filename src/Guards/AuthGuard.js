@@ -1,12 +1,12 @@
 /* eslint-disable react/prop-types */
 import React from "react";
-import { useAuthContext } from "../context/auth/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { SIGN_IN, SIGN_UP } from "../constants/routes";
 import styles from "./AuthGuard.module.css";
+import { useAppContext } from "../context/AppContext";
 
 const AuthGuard = ({ children }) => {
-  const { state } = useAuthContext();
+  const { state } = useAppContext();
   const { isAuthenticated } = state;
   const navigate = useNavigate();
   return (

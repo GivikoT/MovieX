@@ -3,7 +3,7 @@ import {
   errorHandler,
   loadingStatus,
   saveMovies,
-} from "./auth/actions/AuthContextActionsCreators";
+} from "./actions/AppContextActionsCreators";
 
 export async function handleFetch(dispatch) {
   dispatch(loadingStatus(true));

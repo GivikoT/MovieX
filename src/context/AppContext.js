@@ -1,13 +1,13 @@
 /* eslint-disable react/prop-types */
 import React, { createContext, useContext, useEffect, useReducer } from "react";
 import { reducer, initialState } from "./AuthContextReducer";
-import { handleFetch } from "../effects";
-import { authenticated } from "./actions/AuthContextActionsCreators";
-import { isTokenValid } from "../../utils/jwt";
+import { handleFetch } from "./effects";
+import { authenticated } from "./actions/AppContextActionsCreators";
+import { isTokenValid } from "../utils/jwt";
 
-const authContext = createContext();
+const appContext = createContext();
 
-const AuthContext = ({ children }) => {
+const AppContext = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
@@ -23,18 +23,18 @@ const AuthContext = ({ children }) => {
   }, []);
 
   return (
-    <authContext.Provider value={{ state, dispatch }}>
+    <appContext.Provider value={{ state, dispatch }}>
       {children}
-    </authContext.Provider>
+    </appContext.Provider>
   );
 };
 
-export const useAuthContext = () => {
-  const context = useContext(authContext);
-  if (authContext) {
+export const useAppContext = () => {
+  const context = useContext(appContext);
+  if (appContext) {
     return context;
   }
-  throw new Error("authContext Error");
+  throw new Error("AppContext Error");
 };
 
-export default AuthContext;
+export default AppContext;
